@@ -1,5 +1,5 @@
 {
-  "npmScope": "angular-core-workshop",
+  "npmScope": "workshop",
   "implicitDependencies": {
     "angular.json": "*",
     "package.json": "*",
@@ -8,10 +8,22 @@
     "nx.json": "*"
   },
   "projects": {
-    "angular-core-e2e": {
+    "dashboard-e2e": {
       "tags": []
     },
-    "angular-core": {
+    "dashboard": {
+      "tags": []
+    },
+    "material": {
+      "tags": []
+    },
+    "core-data": {
+      "tags": []
+    },
+    "ui-login": {
+      "tags": []
+    },
+    "ui-toolbar": {
       "tags": []
     }
   }
