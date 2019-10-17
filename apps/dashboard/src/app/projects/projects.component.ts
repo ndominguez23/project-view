@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ProjectsService, Project } from '@workshop/core-data';
+import { Observable } from 'rxjs';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-projects',
@@ -6,34 +9,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent implements OnInit {
-  projects = [
-    {
-      id: '1',
-      title: 'Project One',
-      details: 'This is a sample project',
-      percentComplete: 20,
-      approved: false,
-    },
-    {
-      id: '2',
-      title: 'Project Two',
-      details: 'This is a sample project',
-      percentComplete: 40,
-      approved: false,
-    },
-    {
-      id: '3',
-      title: 'Project Three',
-      details: 'This is a sample project',
-      percentComplete: 100,
-      approved: true,
-    }
-  ];
-  selectedProject;
+  projects$: Observable<Project[]>;
+  selectedProject: Project;
 
-  constructor() { }
+  constructor(private projectService: ProjectsService) { }
 
   ngOnInit() {
+    this.getProjects();
+  }
+
+  getProjects() {
+    this.projects$ = this.projectService.all();
   }
 
   selectProject(proj) {
@@ -43,6 +29,11 @@ export class ProjectsComponent implements OnInit {
 
   cancel() {
     this.selectProject(null);
+  }
+
+  deleteProject(project) {
+    this.projectService.delete(project.id)
+      .subscribe(result => this.getProjects());
   }
 
 }
