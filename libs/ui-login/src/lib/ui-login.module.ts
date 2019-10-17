@@ -4,6 +4,9 @@ import { LoginComponent } from './login/login.component';
 
 @NgModule({
   imports: [CommonModule],
-  declarations: [LoginComponent]
+  declarations: [LoginComponent],
+  exports: [
+    LoginComponent
+  ]
 })
 export class UiLoginModule {}
