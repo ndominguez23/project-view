@@ -10,6 +10,7 @@ import { CustomersModule } from './customers/customers.module';
 import { AppRoutingModule } from './app-routing.module';
 import { UiLoginModule } from '@workshop/ui-login';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     MaterialModule,
     UiLoginModule,
     HttpClientModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],

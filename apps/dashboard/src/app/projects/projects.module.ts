@@ -4,6 +4,7 @@ import { MaterialModule } from '@workshop/material';
 
 import { ProjectsRoutingModule } from './projects-routing.module';
 import { ProjectsComponent } from './projects.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { ProjectsComponent } from './projects.component';
   imports: [
     CommonModule,
     ProjectsRoutingModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule,
   ],
   exports: [
     ProjectsComponent

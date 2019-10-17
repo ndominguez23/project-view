@@ -8,7 +8,7 @@ const BASE_URL = 'http://localhost:3000/';
   providedIn: 'root'
 })
 export class ProjectsService {
-  model = 'projects'
+  model = 'projects';
 
   constructor(private httpClient: HttpClient) { }
 
